@@ -6,6 +6,7 @@ const createToken = (_id) => {
   // header + payload + secret =hash=> signature
   // token = header.payload.signature
   // every calling will create a new token as payload contains a timestamp
+  console.log("SECRET KEY:", process.env.SECRET);
   return jwt.sign({ _id }, process.env.SECRET, { expiresIn: "3d" });
 };
 
